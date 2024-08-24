@@ -1,0 +1,27 @@
+# implementing autoamte markdown format
+# Below implementation we have to create header.md file and have to install terraform-doc in the server
+# below command to run the doc creation
+# terraform-docs markdown --footer-from README.md .
+formatter: markdown table
+header-from: header.md
+
+output:
+  file: README.md
+  mode: replace
+  template: |-
+    <!-- BEGIN_TF_DOCS -->
+
+    {{ .Content }}
+    <!-- END_TF_DOCS -->
+
+sort:
+  enabled: true
+  by: required
+
+settings:
+  indent: 4
+  escape: false
+  default: true
+  required: true
+  type: true
+
