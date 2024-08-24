@@ -10,8 +10,13 @@ variable "vpc_cidr" {
 
 
 variable "subnet_cidr" {
-  type        = string
+  type        = list(string)
   description = "this is subnet cidr"
+}
+
+variable "subnet_name" {
+  type        = list(string)
+  description = "this is subnet name"
 }
 
 variable "project_name" {
